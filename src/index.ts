@@ -19,6 +19,7 @@ async function createMeasureTable() {
     const [rows, fields] = await pool.execute(`
       CREATE TABLE IF NOT EXISTS measures (
         id INT AUTO_INCREMENT PRIMARY KEY,
+        customer_code VARCHAR(50),
         measure_value DECIMAL(10, 2),
         measure_uuid VARCHAR(36),
         measure_datetime TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
